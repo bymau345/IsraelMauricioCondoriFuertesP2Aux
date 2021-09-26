@@ -88,9 +88,40 @@ console.log(team2);
 //jugadores que hayan marcado al menos un gol, revise los datos del objeto ‘game’
 //para encontrar la información que le sirva)
 
-function printGoals(){
-  let [gk ,]=players1[0];
-  console.log(players1);
+let v =(printGoals(game.scored));
+
+function printGoals(...ns) {
+
+
+    let arr= [...ns[0]];
+    console.log(arr);
+    let result= { }; 
+        for(let i = 0; i < arr.length; ++i) 
+        { 
+            if(!result[arr[i]])
+
+                result[arr[i]] = 0; 
+                ++result[arr[i]]; 
+
+        }
+        console.log(result);
 
 }
-printGoals();
+
+
+    /*7. Es más probable que gane el equipo con la cuota más baja. Imprima en la consola que equipo es más 
+    probable que gane, sin usar una declaración if/else o el operador ternario.*/
+
+    let final = [
+      {
+          nombre_del_equipo1: game.team1, cuota: game.odds.team1
+
+      },
+      {
+          nombre_del_equipo2: game.team2, cuota: game.odds.team2
+
+      }
+  ]
+  let cuotamas_baja = Math.min(final[0].cuota, final[1].cuota);
+  let equipo_ganador  = final.filter(final => final.cuota == cuotamas_baja);
+  console.log(equipo_ganador);
