@@ -88,20 +88,20 @@ console.log(team2);
 //jugadores que hayan marcado al menos un gol, revise los datos del objeto ‘game’
 //para encontrar la información que le sirva)
 
-let v =(printGoals(game.scored));
+let p1 =(printGoals(game.scored));
 
 function printGoals(...ns) {
 
 
-    let arr= [...ns[0]];
-    console.log(arr);
+    let a= [...ns[0]];
+    console.log(a);
     let result= { }; 
-        for(let i = 0; i < arr.length; ++i) 
+        for(let i = 0; i < a.length; ++i) 
         { 
-            if(!result[arr[i]])
+            if(!result[a[i]])
 
-                result[arr[i]] = 0; 
-                ++result[arr[i]]; 
+                result[a[i]] = 0; 
+                ++result[a[i]]; 
 
         }
         console.log(result);
@@ -109,19 +109,19 @@ function printGoals(...ns) {
 }
 
 
-    /*7. Es más probable que gane el equipo con la cuota más baja. Imprima en la consola que equipo es más 
-    probable que gane, sin usar una declaración if/else o el operador ternario.*/
+    //7. Es más probable que gane el equipo con la cuota más baja. Imprima en la consola que equipo es más 
+    //probable que gane, sin usar una declaración if/else o el operador ternario.
 
-    let final = [
+    let finalj = [
       {
-          nombre_del_equipo1: game.team1, cuota: game.odds.team1
+          nombre_equipo1: game.team1, cuota: game.odds.team1
 
       },
       {
-          nombre_del_equipo2: game.team2, cuota: game.odds.team2
+          nombre_equipo2: game.team2, cuota: game.odds.team2
 
       }
   ]
-  let cuotamas_baja = Math.min(final[0].cuota, final[1].cuota);
-  let equipo_ganador  = final.filter(final => final.cuota == cuotamas_baja);
-  console.log(equipo_ganador);
+  let cuotamasbaja = Math.min(finalj[0].cuota, finalj[1].cuota);
+  let equipow  = finalj.filter(finalj => finalj.cuota == cuotamasbaja);
+  console.log(equipow);
