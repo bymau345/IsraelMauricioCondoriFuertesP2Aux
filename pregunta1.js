@@ -125,3 +125,16 @@ function printGoals(...ns) {
   let cuotamasbaja = Math.min(finalj[0].cuota, finalj[1].cuota);
   let equipow  = finalj.filter(finalj => finalj.cuota == cuotamasbaja);
   console.log(equipow);
+
+
+  //8. Use un bucle para poder calcular la cuota (odd) promedio y mostrarlo en la 
+//consola
+
+let sum= 0;
+let con = 0;
+for (let i in game.odds){
+  sum = sum + game.odds[i];
+  con++;
+}
+let prom=sum/con;
+console.log(prom);
